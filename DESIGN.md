@@ -23,7 +23,7 @@ Users can chat with different characters in a defined world, in different places
  - Detailed Description
  - Exits
  - Picture
- - Event Artefacts (consequences of recent significant events in this room — ruin, damage, products; updated by the Narrator in round 2)
+ - Event Artefacts (persistent traces of recent significant events in this room — ruin, damage, products; updated by the Narrator in round 2, and erasable by it at any time)
 
 #### Narrator
  - Tone
@@ -178,9 +178,7 @@ All model access is configured, never hard-coded. The engine must not assume any
 
 5. **Setting-page parse has no preview/confirm step.** AI parsing of a long text block will drop things; the structured result should be shown for confirmation before it lands.
 
-6. **No player inventory.** `Event Artefacts` is now defined as the consequences of recent significant events in a room (ruin, damage, products), but where a *picked-up object* lives is still unspecified.
-
-7. **Contradiction rule.** If a character claims a location that contradicts `Current Room`, state wins and the Narrator reconciles in narration. Needs to be written down.
+6. **Contradiction rule.** If a character claims a location that contradicts `Current Room`, state wins and the Narrator reconciles in narration. Needs to be written down.
 
 ## Build Notes
 

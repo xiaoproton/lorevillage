@@ -24,7 +24,7 @@ LoreVillage sits between the two: a small world with rooms, where characters hav
 ## What it isn't
 
 - **Not a simulation.** There is no background tick. The world advances only when you speak.
-- **Not an RPG.** No HP/MP, no tile movement, no animation.
+- **Not an RPG.** No HP/MP, no tile movement, no animation, no inventory.
 - **Not a chatbot wrapper.** The world state is real, structured, and persists.
 
 ## The Narrator
@@ -55,6 +55,7 @@ LoreVillage talks to any OpenAI-compatible endpoint. Point it at OpenRouter, Ope
 4. **State is owned by code, not the model.** The model proposes changes; code validates them against the room graph and lands them. Position and status are never left to prose.
 5. **Information asymmetry is the mechanic.** Characters only know what they were told. Secrets, misunderstandings and dramatic irony come from that, not from scripting.
 6. **The world has a past you weren't there for.** The Narrator may write off-screen history for time and places you were absent from, and that history becomes canon.
+7. **Objects are narrative, not state.** There is no inventory. Things appear and disappear as the story needs them to. Only persistent traces — ruin, damage, products — are recorded as Event Artefacts, and the Narrator may erase those too.
 
 ## Design document
 
