@@ -43,6 +43,10 @@ Every turn runs in two rounds.
 
 **Round 2 — narrate.** The Narrator reads the characters' responses and writes what you see. It never exposes their private thoughts directly.
 
+## Bring your own model
+
+LoreVillage talks to any OpenAI-compatible endpoint. Point it at OpenRouter, OpenAI, a local llama.cpp or Ollama server, or your own gateway — the Narrator and the characters can even run on different models. API keys are read from the environment and never stored in the repo. See [.env.example](.env.example).
+
 ## Design principles
 
 1. **Turn-driven, not tick-driven.** The world advances only when you speak. No wall-clock drift, no background simulation, no waking up to a world that moved without you.

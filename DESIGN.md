@@ -141,6 +141,28 @@ Users can chat with different characters in a defined world, in different places
 
 ---
 
+## Configuration
+
+All model access is configured, never hard-coded. The engine must not assume any particular provider.
+
+| Setting | Purpose |
+|---|---|
+| `OPENAI_API_URL` | Base URL of an OpenAI-compatible chat-completions endpoint |
+| `OPENAI_API_KEY` | API key — **environment variable only, never committed** |
+| `NARRATOR_MODEL` | Model used for both Narrator rounds |
+| `CHARACTER_MODEL` | Model used for character calls |
+| `IMAGE_API_URL` | Base URL for image generation (room pictures, avatars) — optional |
+| `IMAGE_API_KEY` | Image API key — environment variable only |
+| `IMAGE_MODEL` | Image model name |
+
+**Defaults for Sam's own setup:** OpenRouter (`https://openrouter.ai/api/v1`) with `deepseek/deepseek-v4.1-flash` for both Narrator and Character. Not fixed — the Narrator and the characters can run on different models, and the Narrator is the one worth spending more on.
+
+**Why separate:** anyone downloading this may point it at their own endpoint — a local llama.cpp / Ollama / LM Studio / vLLM server, another provider, or a private gateway. Nothing in the engine should assume OpenRouter.
+
+**Security:** keys are read from the environment only. `.env` is gitignored; no key ever appears in the repo, in committed config, or in logs. `.env.example` carries placeholders only.
+
+---
+
 ## Open Questions (not yet decided)
 
 1. **State updates are still prose.** `Update Character's Current Room, Current Status` is a natural-language instruction. For code to apply it reliably it needs a structured schema, e.g.
